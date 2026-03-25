@@ -78,15 +78,11 @@
     }
     .nav-logo {
       display: flex; align-items: center; gap: 0.6rem;
-      font-family: var(--font-head);
-      font-weight: 800; font-size: 1.3rem;
-      letter-spacing: 0.04em;
     }
-    .nav-logo .l-p { color: var(--gray); }
-    .nav-logo .l-r { color: var(--green); }
-    .nav-logo .l-e { color: var(--gray); }
-    .nav-logo .l-w { color: var(--green); }
-    .nav-logo .l-a { color: var(--blue); }
+    
+    .nav-logo-img {
+      height: 100px;
+   }
 
     .nav-links {
       display: flex; gap: 0.25rem;
@@ -657,7 +653,6 @@
 
     /* Logo image */
     .logo-img {
-      width: 36px; height: 36px;
       object-fit: contain;
       flex-shrink: 0;
       transition: width 0.3s, height 0.3s;
@@ -711,9 +706,11 @@
     <div class="nav-inner">
       <a href="#home" class="nav-logo" id="navLogo">
         
-
+        <div class="nav-logo">
+          <img src="img/PREWA_header_logo.png">
+        </div>
         <div class="nav-logo-text">
-          <span class="l-p">PREWA</span>
+          
         </div>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -855,7 +852,7 @@
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-num">24<span>mo</span></div>
+          <div class="hero-stat-num">24<span> m</span></div>
           <div class="hero-stat-lbl">Project Duration</div>
         </div>
         <div class="hero-divider"></div>
@@ -949,9 +946,9 @@
   <!-- ═══ PARTNERS ═══ -->
   <section id="partners">
     <div class="section-wrap">
-      <div class="section-label">Partner Institutions</div>
-      <h2 class="section-title">The PREWA Team</h2>
-      <p class="section-body">A bilateral collaboration between Turkey and Romania, combining complementary expertise in thermochemical conversion, material characterization, and environmental assessment.</p>
+      <div class="section-label">The PREWA Team</div>
+      <h2 class="section-title">Partner Institutions</h2>
+      <p class="section-body">A bilateral collaboration between Türkiye and Romania, combining complementary expertise in thermochemical conversion, material characterization, and environmental assessment.</p>
       <div class="partners-grid" style="margin-top:3.5rem;">
         <div class="partner-card tr reveal">
           <div class="partner-flag">🇹🇷</div>
@@ -1004,9 +1001,9 @@
   <!-- ═══ RESEARCHERS ═══ -->
   <section id="workpackages">
     <div class="section-wrap">
-      <div class="section-label">Project Team</div>
-      <h2 class="section-title">Researchers</h2>
-      <p class="section-body">Meet the scientists driving the PREWA project across Turkey and Romania.</p>
+      <div class="section-label">Researchers</div>
+      <h2 class="section-title">Project Team</h2>
+      <p class="section-body">Meet the scientists driving the PREWA project across Türkiye and Romania.</p>
 
       <div class="people-grid">
 
@@ -1074,9 +1071,9 @@
       <p class="section-body">Follow the project milestones, upcoming events, and collaboration activities.</p>
       <div class="news-grid">
         <div class="news-card reveal">
-          <div class="news-img">🚀</div>
+          <div class="news-img"><img src="img/prewa_kickoff_01.jpg"></div>
           <div class="news-body">
-            <div class="news-date">2025</div>
+            <div class="news-date">November 2025</div>
             <div class="news-title">Kick-off Meeting — PREWA Project Officially Launched</div>
             <div class="news-excerpt">Partners from Ege University and POLITEHNICA Bucharest convened for the inaugural project meeting, aligning on objectives, timelines, and collaborative workflows.</div>
             <span class="news-tag tag-event">Kick-off</span>
@@ -1131,7 +1128,7 @@
             <div class="c-icon">🇹🇷</div>
             <div>
               <div class="c-label">Turkish Partner</div>
-              <div class="c-value">Dr. Özben Kutlu<br>Ege University Solar Energy Institute<br>İzmir, Turkey</div>
+              <div class="c-value">Dr. Özben Kutlu<br>Ege University Solar Energy Institute<br>İzmir, Türkiye</div>
             </div>
           </div>
           <div class="contact-info-item">
@@ -1202,7 +1199,7 @@
       </div>
       <div class="footer-funding">
         Funded by TÜBİTAK &amp; MCID Joint Call 2024<br>
-        EgeU (Turkey) · UNSTPB (Romania)
+        EgeU (Türkiye) · UNSTPB (Romania)
       </div>
     </div>
   </footer>
