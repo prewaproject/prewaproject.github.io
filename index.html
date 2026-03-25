@@ -172,6 +172,67 @@
       font-size: 1.05rem; color: var(--gray-mid);
       max-width: 680px; line-height: 1.75;
     }
+    
+    
+    /* ─── PEOPLE ─── */
+    #workpackages { background: var(--gray-lt); }
+    .people-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .people-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex; flex-direction: column;
+    }
+    .people-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.08); transform: translateY(-3px); }
+    .people-img {
+      height: 200px; overflow: hidden;
+      background: linear-gradient(135deg, var(--green-dim), var(--blue-dim));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem; flex-shrink: 0;
+    }
+    .people-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top;
+      display: block;
+    }
+    .people-body { padding: 1.25rem; display: flex; flex-direction: column; flex: 1; }
+    .people-role {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--green);
+      margin-bottom: 0.35rem;
+    }
+    .people-name {
+      font-family: var(--font-head); font-size: 0.95rem; font-weight: 700;
+      color: var(--gray); line-height: 1.3; margin-bottom: 0.25rem;
+    }
+    .people-inst {
+      font-size: 0.8rem; color: var(--blue); font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+    .people-desc { font-size: 0.8rem; color: var(--gray-mid); line-height: 1.55; flex: 1; }
+    .people-link {
+      display: inline-block; margin-top: 0.85rem;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.2rem 0.65rem;
+      border-radius: 10px;
+      background: var(--green-dim); color: var(--green);
+      text-decoration: none; transition: background 0.2s, color 0.2s;
+    }
+    .people-link:hover { background: var(--green); color: white; }
+    .people-link.blue { background: var(--blue-dim); color: var(--blue); }
+    .people-link.blue:hover { background: var(--blue); color: white; }
+    .tag-event  { background: var(--green-dim); color: var(--green); }
+    .tag-milestone { background: var(--blue-dim); color: var(--blue); }
+    .tag-collab { background: #FFF3D4; color: #B07800; }
+    .news-empty {
+      grid-column: 1 / -1;
+      text-align: center; padding: 3rem;
+      color: var(--gray-mid); font-size: 0.95rem;
+      border: 2px dashed var(--border); border-radius: 14px;
+    }
 
     /* ─── HERO ─── */
     #home {
@@ -374,7 +435,7 @@
     }
     .partner-tag.blue { background: var(--blue-dim); color: var(--blue); }
 
-    /* ─── WORK PACKAGES ─── */
+    /* ─── RESEARCHERS ─── */
     #workpackages { background: var(--gray-lt); }
     .wp-intro {
       display: flex; justify-content: space-between; align-items: flex-start;
@@ -577,6 +638,9 @@
     .reveal-d4 { transition-delay: 0.4s; }
 
     /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      .people-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 900px) {
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .partners-grid { grid-template-columns: 1fr; }
@@ -586,6 +650,7 @@
       .hero-stats { gap: 1.5rem; }
       .hero-divider { display: none; }
       .news-grid { grid-template-columns: 1fr; }
+      .people-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       section { padding: 70px 0; }
     }
@@ -634,6 +699,8 @@
       pointer-events: none;
     }
     .hero-dot-logo svg { width: 100%; height: 100%; }
+    
+
   </style>
 </head>
 <body>
@@ -889,7 +956,7 @@
         <div class="partner-card tr reveal">
           <div class="partner-flag">🇹🇷</div>
           <div class="partner-name">Ege University Solar Energy Institute</div>
-          <div class="partner-abbr">EgeU · İzmir, Turkey</div>
+          <div class="partner-abbr">İzmir, Türkiye</div>
           <div class="partner-meta">
             <div class="partner-meta-row">
               <span class="pmr-label">Principal Investigator:</span>
@@ -934,97 +1001,67 @@
     </div>
   </section>
 
-  <!-- ═══ WORK PACKAGES ═══ -->
+  <!-- ═══ RESEARCHERS ═══ -->
   <section id="workpackages">
     <div class="section-wrap">
-      <div class="section-label">Project Researchers</div>
+      <div class="section-label">Project Team</div>
       <h2 class="section-title">Researchers</h2>
-      <p class="section-body">.</p>
-      
-      
-      <!-- ═══ WORK PACKAGES ═══     
-      <h2 class="section-title">Project Roadmap</h2>
-      <p class="section-body">Six interconnected work packages spanning 24 months, from waste collection to dissemination of results.</p>
-      <div style="margin-top:3.5rem;" class="wp-timeline">
+      <p class="section-body">Meet the scientists driving the PREWA project across Turkey and Romania.</p>
 
-        <div class="wp-item reveal">
-          <div class="wp-num-col"><span class="wp-num">WP1</span></div>
-          <div class="wp-line-col"></div>
-          <div class="wp-content-col">
-            <div class="wp-title">Waste Identification and Supply</div>
-            <div class="wp-desc">Collection and preparation of sewage sludge (SS) and spent mushroom compost (SMC) samples. Statistical optimization of mixture ratios using Design of Experiments.</div>
-            <div class="wp-meta">
-              <span class="wp-tag wp-tag-mo">3 months</span>
-              <span class="wp-tag wp-tag-who">Lead: EgeU</span>
-            </div>
+      <div class="people-grid">
+
+        <!-- Researcher 1 -->
+        <div class="people-card reveal">
+          <div class="people-img">
+            <img src="img/Ozben_Kutlu.jpg" alt="Dr. Özben Kutlu" onerror="this.style.display='none';this.parentElement.innerHTML='👩‍🔬';">
           </div>
-        </div>
-		
-        <div class="wp-item reveal reveal-d1">
-          <div class="wp-num-col"><span class="wp-num">WP2</span></div>
-          <div class="wp-line-col"></div>
-          <div class="wp-content-col">
-            <div class="wp-title">Characterization of Input and Output Materials</div>
-            <div class="wp-desc">Detailed physical, chemical, and structural analyses of raw materials and process outputs using advanced analytical techniques (XRF, TEM, etc.).</div>
-            <div class="wp-meta">
-              <span class="wp-tag wp-tag-mo">20 months</span>
-              <span class="wp-tag wp-tag-who">Lead: UNSTPB · Partner: EgeU</span>
-            </div>
+          <div class="people-body">
+            <div class="people-role">Principal Investigator · EGE</div>
+            <div class="people-name">Assist. Prof. Dr. Özben Kutlu</div>
+            <div class="people-inst">Ege University Solar Energy Institute</div>
+            <div class="people-desc">Waste/biomass combustion, fluidized bed technologies, biochar/hydrochar production, LCA.</div>
+            <a class="people-link" href="https://www.linkedin.com/in/%C3%B6zben-kutlu-50953244/" target="_blank">More info →</a>
           </div>
         </div>
 
-        <div class="wp-item reveal reveal-d2">
-          <div class="wp-num-col"><span class="wp-num">WP3</span></div>
-          <div class="wp-line-col"></div>
-          <div class="wp-content-col">
-            <div class="wp-title">Production of P-Rich Ash and Biocarbon Sources</div>
-            <div class="wp-desc">Fluidized bed combustion experiments to produce phosphorus-rich ash. Parallel production of biochar and hydrochar as biocarbon reducing agents.</div>
-            <div class="wp-meta">
-              <span class="wp-tag wp-tag-mo">12 months</span>
-              <span class="wp-tag wp-tag-who">Lead: EgeU · Partner: UNSTPB</span>
-            </div>
+        <!-- Researcher 2 -->
+        <div class="people-card reveal reveal-d1">
+          <div class="people-img">
+            <img src="img/Mihaela_Balanescu.jpg" alt="Dr. Mihaela Bălănescu" onerror="this.style.display='none';this.parentElement.innerHTML='👩‍🔬';">
+          </div>
+          <div class="people-body">
+            <div class="people-role">Principal Investigator · UNSTPB</div>
+            <div class="people-name">Dr. Mihaela Bălănescu</div>
+            <div class="people-inst">POLITEHNICA Bucharest</div>
+            <div class="people-desc">Green technologies, carbon materials, microwave heating, material characterization (XRF, TEM), GHG assessment.</div>
+            <a class="people-link blue" href="#" target="_blank">More info →</a>
           </div>
         </div>
 
-        <div class="wp-item reveal">
-          <div class="wp-num-col"><span class="wp-num">WP4</span></div>
-          <div class="wp-line-col"></div>
-          <div class="wp-content-col">
-            <div class="wp-title">Waste Heat Treatment in Microwave Field</div>
-            <div class="wp-desc">Optimization of phosphorus extraction from P-rich ash using microwave-assisted thermal treatment with biocarbon reducing agents. Target: ≥60% P recovery.</div>
-            <div class="wp-meta">
-              <span class="wp-tag wp-tag-mo">15 months</span>
-              <span class="wp-tag wp-tag-who">Lead: UNSTPB</span>
-            </div>
+        <!-- Researcher 3 — placeholder -->
+        <div class="people-card reveal reveal-d2">
+          <div class="people-img">👨‍🔬</div>
+          <div class="people-body">
+            <div class="people-role">Researcher · EGE</div>
+            <div class="people-name">Researcher Name</div>
+            <div class="people-inst">Ege University Solar Energy Institute</div>
+            <div class="people-desc">Research area and expertise description goes here.</div>
+            <a class="people-link" href="#" target="_blank">More info →</a>
           </div>
         </div>
 
-        <div class="wp-item reveal reveal-d1">
-          <div class="wp-num-col"><span class="wp-num">WP5</span></div>
-          <div class="wp-line-col"></div>
-          <div class="wp-content-col">
-            <div class="wp-title">Environmental Impact Assessment</div>
-            <div class="wp-desc">Life Cycle Assessment (LCA) of the full PREWA process chain — carbon footprint, emissions analysis, and comparison with conventional phosphorus production pathways.</div>
-            <div class="wp-meta">
-              <span class="wp-tag wp-tag-mo">10 months</span>
-              <span class="wp-tag wp-tag-who">Lead: EgeU · Partner: UNSTPB</span>
-            </div>
+        <!-- Researcher 4 — placeholder -->
+        <div class="people-card reveal reveal-d3">
+          <div class="people-img">👩‍🔬</div>
+          <div class="people-body">
+            <div class="people-role">Researcher · UNSTPB</div>
+            <div class="people-name">Researcher Name</div>
+            <div class="people-inst">POLITEHNICA Bucharest</div>
+            <div class="people-desc">Research area and expertise description goes here.</div>
+            <a class="people-link blue" href="#" target="_blank">More info →</a>
           </div>
         </div>
 
-        <div class="wp-item reveal reveal-d2">
-          <div class="wp-num-col"><span class="wp-num">WP6</span></div>
-          <div class="wp-line-col"></div>
-          <div class="wp-content-col">
-            <div class="wp-title">Dissemination of Project Results</div>
-            <div class="wp-desc">Project website, scientific publications (≥2 SCI papers), conference presentations (≥3), and a one-day international workshop at month 12.</div>
-            <div class="wp-meta">
-              <span class="wp-tag wp-tag-mo">24 months</span>
-              <span class="wp-tag wp-tag-who">Lead: UNSTPB · Partner: EgeU</span>
-            </div>
-          </div>
-        </div>
--->
       </div>
     </div>
   </section>
@@ -1058,7 +1095,7 @@
           <div class="news-img">🤝</div>
           <div class="news-body">
             <div class="news-date">Ongoing</div>
-            <div class="news-title">Bilateral Researcher Exchange — EgeU &amp; UNSTPB</div>
+            <div class="news-title">Bilateral Researcher Exchange — EGE &amp; UPB</div>
             <div class="news-excerpt">Under the mobility project framework, researchers are exchanging expertise in microwave heating techniques and fluidized bed combustion analysis.</div>
             <span class="news-tag tag-collab">Collaboration</span>
           </div>
